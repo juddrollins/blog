@@ -17,4 +17,8 @@
   </section>
 </template>
 
-<script></script>
+<script>
+export default {
+  auth: false
+};
+</script>

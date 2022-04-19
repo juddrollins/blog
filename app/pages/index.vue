@@ -12,6 +12,5 @@ export default {
   components: {
     Card,
   },
-  middleware: 'auth'
 };
 </script>

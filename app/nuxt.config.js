@@ -17,6 +17,10 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
+  server: {
+    port: 8000 // default: 3000
+  },
+
   // Router Middleware
   router: { middleware: ["auth"] },
 
@@ -48,7 +52,23 @@ export default {
   ],
 
   auth: {
-    
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: "/api/auth/login",
+            method: "post",
+            propertyName: "token",
+          },
+          user: {
+            url: "/api/auth/user",
+            method: "get",
+            propertyName: "token",
+          },
+          logout: true,
+        },
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

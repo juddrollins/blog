@@ -7,23 +7,21 @@
           type="is-success"
           message="This username is available"
         >
-          <b-input value="" maxlength="30"></b-input>
+          <b-input v-model="login.username" maxlength="30"></b-input>
         </b-field>
       </div>
     </div>
     <div class="columns is-centered">
       <div class="column is-one-third">
         <b-field label="Password">
-          <b-input type="password" value="" password-reveal>
+          <b-input type="password" v-model="login.password" password-reveal>
           </b-input>
         </b-field>
       </div>
     </div>
     <div class="columns is-centered">
       <div class="column is-one-quarter">
-        <NuxtLink to="/">
-          <b-button type="is-primary is-fullwidth">Login</b-button>
-        </NuxtLink>
+          <b-button v-on:click="userLogin" type="is-primary is-fullwidth">Login</b-button>
       </div>
     </div>
     <div class="columns is-centered">
@@ -48,6 +46,7 @@ export default {
   },
   methods: {
     async userLogin() {
+      console.log("here")
       try {
         let response = await this.$auth.loginWith('local', { data: this.login })
         console.log(response)

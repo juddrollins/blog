@@ -21,6 +21,9 @@ export default {
     port: 8000 // default: 3000
   },
 
+   // Router Middleware
+   router: { middleware: ["auth"] },
+
   vue: {
     config: {
       productionTip: false,

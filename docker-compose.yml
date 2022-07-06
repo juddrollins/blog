@@ -13,7 +13,8 @@ services:
     container_name: app
     build: ./app
     volumes:
-      - ./app
+      - ./app/pages:/usr/src/app/pages
+      - ./app/nuxt.config.js:/usr/src/app/nuxt.config.js
     ports:
       - 8000:8000
     depends_on:

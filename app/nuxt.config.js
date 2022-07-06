@@ -21,9 +21,6 @@ export default {
     port: 8000 // default: 3000
   },
 
-  // Router Middleware
-  router: { middleware: ["auth"] },
-
   vue: {
     config: {
       productionTip: false,
@@ -51,21 +48,25 @@ export default {
     "@nuxtjs/auth-next",
   ],
 
+  axios: {
+    baseURL: 'http://127.0.0.1/api'
+  },
+
   auth: {
     strategies: {
       local: {
         endpoints: {
           login: {
-            url: "/api/auth/login",
+            url: "/user/login",
             method: "post",
-            propertyName: "token",
+            propertyName: "data.token",
           },
           user: {
-            url: "/api/auth/user",
+            url: "/auth/user",
             method: "get",
-            propertyName: "token",
+            propertyName: "data",
           },
-          logout: true,
+          logout: false,
         },
       },
     },

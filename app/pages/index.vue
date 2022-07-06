@@ -8,6 +8,7 @@
 import Card from "~/components/Card";
 
 export default {
+  auth: true,
   name: "IndexPage",
   components: {
     Card,

@@ -15,11 +15,11 @@ let userSchema = new mongoose.Schema({
   },
   firstname: {
     type: String,
-    require: true,
+    require: false,
   },
   lastname: {
     type: String,
-    required: true,
+    required: false,
   },
   date: {
     type: Date,
